@@ -1,4 +1,4 @@
-export type TileType = 0 | 1 | 2 | 3 | 4 | 5;
+export type TileType = -1 | 0 | 1 | 2 | 3 | 4 | 5;
 
 export interface Tile {
   type: TileType;
@@ -170,7 +170,7 @@ export class Match3Engine {
     let score = 0;
     
     for (const pos of matches) {
-      this.grid[pos.row][pos.col] = { type: -1 as TileType, id: -1 };
+      this.grid[pos.row][pos.col] = { type: -1, id: -1 };
       score += 10;
     }
 
@@ -191,7 +191,7 @@ export class Match3Engine {
         if (this.grid[row][col].type !== -1) {
           if (row !== writeRow) {
             this.grid[writeRow][col] = this.grid[row][col];
-            this.grid[row][col] = { type: -1 as TileType, id: -1 };
+            this.grid[row][col] = { type: -1, id: -1 };
           }
           writeRow--;
         }
