@@ -50,13 +50,13 @@ export const models: Model[] = [
   },
   {
     id: 'model2',
-    display_name_en: 'Yuki Matsumoto',
-    display_name_ja: '松本ゆき',
+    display_name_en: 'Nami Shiraishi',
+    display_name_ja: '白石なみ(しらいしなみ)',
     tagline_en: 'Editorial & street style',
-    tagline_ja: 'エディトリアル＆ストリート',
-    instagram: 'https://instagram.com/yuki_matsumoto',
-    tiktok: 'https://tiktok.com/@yuki_matsumoto',
-    fansite: 'https://example.com/yuki',
+    tagline_ja: '幼可愛い時々、綺麗。',
+    instagram: 'https://moodyz.com/actress/detail/860463',
+    tiktok: 'https://moodyz.com/actress/detail/860463',
+    fansite: 'https://moodyz.com/actress/detail/860463',
     photos: [
       {
         id: 'photo1',
@@ -80,13 +80,13 @@ export const models: Model[] = [
   },
   {
     id: 'model3',
-    display_name_en: 'Mio Nakamura',
-    display_name_ja: '中村美緒',
+    display_name_en: 'Suzu Matsuoka',
+    display_name_ja: '松岡すず(まつおかすず)',
     tagline_en: 'Contemporary portraiture',
-    tagline_ja: 'コンテンポラリーポートレート',
-    instagram: 'https://instagram.com/mio_nakamura',
-    tiktok: 'https://tiktok.com/@mio_nakamura',
-    fansite: 'https://example.com/mio',
+    tagline_ja: 'NAXプロモーション所属',
+    instagram: 'https://www.instagram.com/suzu_matsuoka_nax/',
+    tiktok: 'https://x.com/suzusprings',
+    fansite: 'https://x.com/suzusprings',
     photos: [
       {
         id: 'photo1',
@@ -110,13 +110,13 @@ export const models: Model[] = [
   },
   {
     id: 'model4',
-    display_name_en: 'Rina Kobayashi',
-    display_name_ja: '小林里奈',
+    display_name_en: 'Sakura Kawaguchi',
+    display_name_ja: '川口桜(かわぐちさくら)',
     tagline_en: 'Avant-garde fashion',
-    tagline_ja: 'アバンギャルドファッション',
-    instagram: 'https://instagram.com/rina_kobayashi',
-    tiktok: 'https://tiktok.com/@rina_kobayashi',
-    fansite: 'https://example.com/rina',
+    tagline_ja: 'エスフラート所属',
+    instagram: 'https://www.instagram.com/kawaguchi_sakura/',
+    tiktok: 'https://x.com/sakura07082005',
+    fansite: 'https://x.com/sakura07082005',
     photos: [
       {
         id: 'photo1',
@@ -140,13 +140,13 @@ export const models: Model[] = [
   },
   {
     id: 'model5',
-    display_name_en: 'Hana Suzuki',
-    display_name_ja: '鈴木花',
+    display_name_en: 'Hinako Mori',
+    display_name_ja: '森日向子(もりひなこ)',
     tagline_en: 'Natural & ethereal',
     tagline_ja: 'ナチュラル＆エセリアル',
-    instagram: 'https://instagram.com/hana_suzuki',
-    tiktok: 'https://tiktok.com/@hana_suzuki',
-    fansite: 'https://example.com/hana',
+    instagram: 'https://www.instagram.com/hinako_mori_/',
+    tiktok: 'https://x.com/morihinako_',
+    fansite: 'https://x.com/morihinako_',
     photos: [
       {
         id: 'photo1',
