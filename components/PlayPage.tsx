@@ -48,7 +48,7 @@ export default function PlayPage() {
           <h1 className="page-title">{t('play.title')}</h1>
           {featuredModel && (
             <p className="text-cream/70">
-              Today's featured:{' '}
+              Today&apos;s featured:{' '}
               <span className="text-gold font-semibold">
                 {language === 'ja' ? featuredModel.display_name_ja : featuredModel.display_name_en}
               </span>

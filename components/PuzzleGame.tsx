@@ -2,7 +2,7 @@
 
 import { useLanguage } from '@/components/LanguageProvider';
 import { Match3Engine, Position, Tile } from '@/lib/game-engine';
-import { getFeaturedModelId, useFreePly } from '@/lib/daily';
+import { getFeaturedModelId, recordFreePlay } from '@/lib/daily';
 import { StorageManager } from '@/lib/storage';
 import { models } from '@/data/models';
 import { useRouter } from 'next/navigation';
@@ -83,12 +83,12 @@ export default function PuzzleGame({ levelId }: PuzzleGameProps) {
         if (model) {
           StorageManager.addReveal(modelId, model.photos);
         }
-        useFreePly();
+        recordFreePlay();
         
         setTimeout(() => setShowReward(true), 500);
       } else if (newMoves <= 0) {
         setGameOver(true);
-        useFreePly();
+        recordFreePlay();
       }
       
       setIsProcessing(false);
