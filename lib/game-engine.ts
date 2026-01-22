@@ -30,24 +30,54 @@ export class Match3Engine {
     this.size = size;
     this.numTypes = numTypes;
     this.grid = this.generateGrid();
+    
+    // Debug: Count colors
+    if (typeof window !== 'undefined') {
+      const colorCounts: Record<number, number> = {};
+      this.grid.forEach(row => {
+        row.forEach(tile => {
+          colorCounts[tile.type] = (colorCounts[tile.type] || 0) + 1;
+        });
+      });
+      console.log('Grid initialized with color distribution:', colorCounts);
+    }
   }
 
   private generateGrid(): Tile[][] {
     const grid: Tile[][] = [];
     
-    // Generate random grid without initial matches
+    // Generate completely random grid first
     for (let row = 0; row < this.size; row++) {
       grid[row] = [];
       for (let col = 0; col < this.size; col++) {
-        let type: TileType;
-        let attempts = 0;
-        
-        do {
-          type = Math.floor(Math.random() * this.numTypes) as TileType;
-          attempts++;
-        } while (attempts < 10 && this.wouldCreateMatch(grid, row, col, type));
-        
+        const type = Math.floor(Math.random() * this.numTypes) as TileType;
         grid[row][col] = { type, id: tileIdCounter++ };
+      }
+    }
+    
+    // Remove any initial matches
+    let hasMatches = true;
+    let iterations = 0;
+    
+    while (hasMatches && iterations < 100) {
+      hasMatches = false;
+      iterations++;
+      
+      for (let row = 0; row < this.size; row++) {
+        for (let col = 0; col < this.size; col++) {
+          if (this.wouldCreateMatch(grid, row, col, grid[row][col].type)) {
+            // Find a type that doesn't create a match
+            let newType = grid[row][col].type;
+            for (let t = 0; t < this.numTypes; t++) {
+              if (!this.wouldCreateMatch(grid, row, col, t as TileType)) {
+                newType = t as TileType;
+                break;
+              }
+            }
+            grid[row][col] = { type: newType, id: tileIdCounter++ };
+            hasMatches = true;
+          }
+        }
       }
     }
     

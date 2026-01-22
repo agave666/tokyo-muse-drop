@@ -42,7 +42,7 @@ export function getFreePlaysRemaining(): number {
   return Math.max(0, MAX_FREE_PLAYS - dailyData.freePlaysUsed);
 }
 
-export function useFreePly(): void {
+export function recordFreePlay(): void {
   const today = getTodayString();
   const dailyData = StorageManager.getDailyData();
 
